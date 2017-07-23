@@ -69,13 +69,26 @@ class mouth:
         pwm.set_pwm(self.channel, 0, duty)
 
 class doll:
-    def __init__(self):
-        self.l_eye=eye(0,1,0,0,0)
-        self.r_eye=eye(2,3,0,0,1)
-        self.l_ear=ear(4,20,0)
-        self.r_ear=ear(5,0,1)
-        self.l_bow=bow(6,7,0,0,1)
-        self.r_bow=bow(8,9,0,0,0)
-        self.c_mouth=mouth(0,0,10,0)
-        self.l_mouth=mouth(1,0,11,0)
-        self.r_mouth=mouth(1,1,12,0)
+    def __init__(self,l_eye=eye(0,1,0,0,0),r_eye=eye(2,3,0,0,1),
+                 l_ear=ear(4,20,0),r_ear=ear(5,0,1),
+                 l_bow=bow(6,7,0,0,1),r_bow=bow(8,9,0,0,0),
+                 c_mouth=mouth(0,0,10,0),l_mouth=mouth(1,0,11,0),r_mouth=mouth(1,1,12,0)):
+        self.l_eye=l_eye
+        self.r_eye=r_eye
+        self.l_ear=l_ear
+        self.r_ear=r_ear
+        self.l_bow=l_bow
+        self.r_bow=r_bow
+        self.c_mouth=c_mouth
+        self.l_mouth=l_mouth
+        self.r_mouth=r_mouth
+    def set(self):
+        self.l_eye.set()
+        self.r_eye.set()
+        self.l_ear.set()
+        self.r_ear.set()
+        self.l_bow.set()
+        self.r_bow.set()
+        self.c_mouth.set()
+        self.l_mouth.set()
+        self.r_mouth.set()
