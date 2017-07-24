@@ -46,8 +46,8 @@ def doll_set_by_big_console(d_num):
     d.r_eye.r = eye_r
     d.r_eye.angle= eye_angle
 
-    d.l_mouth.angle=(d_num[l_mouth_angle])*50/1024;
-    d.r_mouth.angle=(d_num[r_mouth_angle])*50/1024;
+    d.l_mouth.angle=(d_num[l_mouth_angle])*50/1024
+    d.r_mouth.angle=(d_num[r_mouth_angle])*50/1024
     if d_num[c_mouth_angle]== 1:
         d.c_mouth.angle=0
     else:
