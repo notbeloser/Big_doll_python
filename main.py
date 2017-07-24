@@ -57,6 +57,7 @@ def doll_set_by_big_console(d_num):
 
 
 while True:
+    print("waiting the data come")
     data, addr = s.recvfrom(2048)
     if not data:
         print "client has exist"
