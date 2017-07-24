@@ -29,15 +29,15 @@ class bow:
         self.rev=rev
     def set(self):
         if self.rev:
-            duty=(1500-self.y * 50 / 3) * 0.4096;
-            angle_duty=(self.angle * 50 / 3+1500) * 0.4096;
+            duty=(1500-self.y * 50 / 3) * 0.4096
+            angle_duty=(self.angle * 50 / 3+1500) * 0.4096
         
         else:
-            duty=(self.y * 50 / 3+1500-60) * 0.4096;
-            angle_duty=(1500-(self.angle-6) * 50 / 3) * 0.4096;
+            duty=(self.y * 50 / 3+1500-60) * 0.4096
+            angle_duty=(1500-(self.angle-6) * 50 / 3) * 0.4096
 
-        pwm.set_pwm(self.channel_y,0,duty)
-        pwm.set_pwm(self.channel_angle,0,angle_duty)
+        pwm.set_pwm(self.channel_y,0,int(duty))
+        pwm.set_pwm(self.channel_angle,0,int(angle_duty))
 
 class ear:
     def __init__(self,channel,angle,rev):
@@ -50,7 +50,7 @@ class ear:
         else:
             duty =  (1350+self.angle * 50 / 3) * 0.4096
         
-        pwm.set_pwm(self.channel,0,duty)
+        pwm.set_pwm(self.channel,0,int(duty))
 
 class mouth:
     def __init__(self,side,rev,channel,angle):
@@ -66,7 +66,7 @@ class mouth:
                 duty = (1400-self.angle * 92 / 9) * 0.4096
             else:
                 duty = (1520+self.angle * 92 / 9) * 0.4096
-        pwm.set_pwm(self.channel, 0, duty)
+        pwm.set_pwm(self.channel, 0, int(duty))
 
 class doll:
     def __init__(self,l_eye=eye(0,1,0,0,0),r_eye=eye(2,3,0,0,1),
