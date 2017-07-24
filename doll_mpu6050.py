@@ -96,6 +96,5 @@ while(1):
     print("gyroYangle   %f"&gyroYangle)
     print("compAngleY   %f"&compAngleY)
     print("kalAngleY    %f"&kalAngleY)
-s
     print("")
 
