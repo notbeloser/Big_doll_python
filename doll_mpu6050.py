@@ -2,7 +2,7 @@ from Kalman_py import Kalman_py
 import math
 from mpu6050 import mpu6050
 from time import sleep,time
-
+import os
 sensor = mpu6050(0x68)
 
 RESTRICT_PITCH = 1
@@ -87,6 +87,8 @@ while(1):
     if gyroYangle < -180 or gyroYangle > 180 :
         gyroYangle = kalAngleY
 
+    os.system("clear")
+
     print("roll         %f"%roll)
     print("gyroXangle   %f"%gyroXangle)
     print("compAngleX   %f"%compAngleX)
@@ -97,4 +99,5 @@ while(1):
     print("compAngleY   %f"%compAngleY)
     print("kalAngleY    %f"%kalAngleY)
     print("")
+
 
