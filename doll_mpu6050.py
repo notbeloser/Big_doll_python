@@ -32,7 +32,7 @@ gyroXangle = roll
 gyroYangle = pitch
 compAngleX = roll
 compAngleY = pitch
-micros = lambda: int(time.time())
+micros = lambda: int(time())
 timer = micros()
 
 while(1):
