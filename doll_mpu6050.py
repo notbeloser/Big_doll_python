@@ -14,9 +14,6 @@ sleep(0.1)
 acc = sensor.get_accel_data()
 gyro = sensor.get_gyro_data()
 temp = sensor.get_temp()
-acc = map(float,acc)
-gyro = map(float,acc)
-temp = float(temp)
 kalAngleX = 0.0
 kalAngleY = 0.0
 
@@ -90,7 +87,7 @@ while(1):
     if gyroYangle < -180 or gyroYangle > 180 :
         gyroYangle = kalAngleY
 
-    print("roll         %f"&roll)
+    print("roll         %f"&float(roll))
     print("gyroXangle   %f"&gyroXangle)
     print("compAngleX   %f"&compAngleX)
     print("kalAngleX    %f"&kalAngleX)
