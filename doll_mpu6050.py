@@ -14,6 +14,9 @@ sleep(0.1)
 acc = sensor.get_accel_data()
 gyro = sensor.get_gyro_data()
 temp = sensor.get_temp()
+acc = map(float,acc)
+gyro = map(float,acc)
+temp = float(temp)
 kalAngleX = 0.0
 kalAngleY = 0.0
 
