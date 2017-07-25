@@ -5,10 +5,7 @@ class Kalman_py:
         self.R_measure=0.03
         self.angle=0.0
         self.bias=0.0
-        self.P[0][0]=0.0
-        self.P[0][1]=0.0
-        self.P[1][0]=0.0
-        self.P[1][1]=0.0
+        self.P=[[0.0,0.0],[0.0,0.0]]
 
     def getAngle(self,newAngle,newRate,dt):
         self.rate = newRate - self.bias
