@@ -43,8 +43,8 @@
       <file leaf-file-name="doll_mpu6050.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/doll_mpu6050.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="673">
-              <caret line="91" column="39" lean-forward="true" selection-start-line="91" selection-start-column="39" selection-end-line="91" selection-end-column="39" />
+            <state relative-caret-position="649">
+              <caret line="86" column="46" lean-forward="true" selection-start-line="86" selection-start-column="46" selection-end-line="86" selection-end-column="46" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
               </folding>
@@ -81,6 +81,7 @@
       <find>P</find>
       <find>|</find>
       <find>time.time</find>
+      <find>&amp;</find>
     </findStrings>
     <replaceStrings>
       <replace>self.</replace>
@@ -88,6 +89,7 @@
       <replace>self.P</replace>
       <replace>or</replace>
       <replace>time</replace>
+      <replace>%</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -612,8 +614,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/doll_mpu6050.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="673">
-          <caret line="91" column="39" lean-forward="true" selection-start-line="91" selection-start-column="39" selection-end-line="91" selection-end-column="39" />
+        <state relative-caret-position="649">
+          <caret line="86" column="46" lean-forward="true" selection-start-line="86" selection-start-column="46" selection-end-line="86" selection-end-column="46" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
           </folding>

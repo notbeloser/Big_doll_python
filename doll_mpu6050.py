@@ -87,14 +87,14 @@ while(1):
     if gyroYangle < -180 or gyroYangle > 180 :
         gyroYangle = kalAngleY
 
-    print("roll         %f"&float(roll))
-    print("gyroXangle   %f"&gyroXangle)
-    print("compAngleX   %f"&compAngleX)
-    print("kalAngleX    %f"&kalAngleX)
+    print("roll         %f"%roll)
+    print("gyroXangle   %f"%gyroXangle)
+    print("compAngleX   %f"%compAngleX)
+    print("kalAngleX    %f"%kalAngleX)
 
-    print("pitch        %f"&pitch)
-    print("gyroYangle   %f"&gyroYangle)
-    print("compAngleY   %f"&compAngleY)
-    print("kalAngleY    %f"&kalAngleY)
+    print("pitch        %f"%pitch)
+    print("gyroYangle   %f"%gyroYangle)
+    print("compAngleY   %f"%compAngleY)
+    print("kalAngleY    %f"%kalAngleY)
     print("")
 
