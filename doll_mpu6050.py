@@ -9,7 +9,7 @@ d = doll()
 d.set()
 sensor = mpu6050(0x68)
 
-RESTRICT_PITCH = 1
+RESTRICT_PITCH = 0
 kalmanX = Kalman_py()
 kalmanY = Kalman_py()
 
