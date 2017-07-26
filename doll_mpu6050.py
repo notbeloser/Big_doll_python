@@ -38,7 +38,7 @@ compAngleX = roll
 compAngleY = pitch
 micros = lambda: int(time())
 timer = micros()
-
+t = micros()
 while(1):
     acc = sensor.get_accel_data()
     gyro = sensor.get_gyro_data()
@@ -103,6 +103,10 @@ while(1):
     print("compAngleY   %f"%compAngleY)
     print("kalAngleY    %f"%kalAngleY)
     print("")
-    # d.l_ear.angle = (d_num[l_ear_angle] - 512) / 1024 * 68 - 5
-    # d.r_ear.angle = (d_num[r_ear_angle] - 512) / 1024 * 68 - 24
+    if micros()-t > 20*10**(-3):
+        t=micros()
+        if abs(roll)<30:
+            d.l_ear.angle = roll
+        if abs(pitch)<30:
+            d.r_ear.angle = pitch
 
