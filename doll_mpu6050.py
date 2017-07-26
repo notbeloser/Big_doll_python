@@ -3,10 +3,10 @@ import math
 from mpu6050 import mpu6050
 from time import sleep,time
 import os
-import Doll
-
-d = Doll.doll()
-d.set()
+# import Doll
+#
+# d = Doll.doll()
+# d.set()
 sensor = mpu6050(0x68)
 
 RESTRICT_PITCH = 1
@@ -103,10 +103,10 @@ while(1):
     print("compAngleY   %f"%compAngleY)
     print("kalAngleY    %f"%kalAngleY)
     print("")
-    if micros()-t > 20*10**(-3):
-        t=micros()
-        if abs(roll)<30:
-            d.l_ear.angle = roll
-        if abs(pitch)<30:
-            d.r_ear.angle = pitch
+    # if micros()-t > 20*10**(-3):
+    #     t=micros()
+    #     if abs(roll)<30:
+    #         d.l_ear.angle = roll
+    #     if abs(pitch)<30:
+    #         d.r_ear.angle = pitch
         # d.set()
