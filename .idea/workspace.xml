@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="aa17b747-744e-4b75-82a0-44d636a2d85f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mpu6050" afterPath="$PROJECT_DIR$/mpu6050" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Doll/__init__.py" afterPath="$PROJECT_DIR$/Doll/__init__.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doll_mpu6050.py" afterPath="$PROJECT_DIR$/doll_mpu6050.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -44,8 +44,8 @@
       <file leaf-file-name="doll_mpu6050.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/doll_mpu6050.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="707">
-              <caret line="105" column="0" lean-forward="false" selection-start-line="105" selection-start-column="0" selection-end-line="111" selection-end-column="15" />
+            <state relative-caret-position="119">
+              <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="8" selection-end-column="15" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
               </folding>
@@ -56,9 +56,11 @@
       <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Doll/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="18" column="56" lean-forward="false" selection-start-line="18" selection-start-column="56" selection-end-line="18" selection-end-column="56" />
-              <folding />
+            <state relative-caret-position="85">
+              <caret line="5" column="10" lean-forward="true" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
+              <folding>
+                <element signature="e#0#23#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -407,7 +409,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="2" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -672,16 +674,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Doll/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="18" column="56" lean-forward="false" selection-start-line="18" selection-start-column="56" selection-end-line="18" selection-end-column="56" />
-          <folding />
+        <state relative-caret-position="85">
+          <caret line="5" column="10" lean-forward="true" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/doll_mpu6050.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="707">
-          <caret line="105" column="0" lean-forward="false" selection-start-line="105" selection-start-column="0" selection-end-line="111" selection-end-column="15" />
+        <state relative-caret-position="119">
+          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="8" selection-end-column="15" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
           </folding>
