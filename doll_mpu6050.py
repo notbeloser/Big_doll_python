@@ -109,4 +109,4 @@ while(1):
             d.l_ear.angle = roll
         if abs(pitch)<30:
             d.r_ear.angle = pitch
-        d.set()
+        # d.set()
