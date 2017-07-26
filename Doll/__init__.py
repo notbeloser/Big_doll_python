@@ -1,7 +1,7 @@
 import Adafruit_PCA9685
 import math
 eye_center=1500
-pwm = Adafruit_PCA9685.PCA9685()
+pwm = Adafruit_PCA9685.PCA9685(i2c=1)
 pwm.set_pwm_freq(100)
 class eye:
     def __init__(self,channel_x,channel_y,r,angle,rev):
