@@ -1,13 +1,13 @@
 from Kalman_py import Kalman_py
 import math
-import Doll
+# import Doll
 from mpu6050 import mpu6050
 from time import sleep,time
 import os
 
 
-d = Doll.doll()
-d.set()
+# d = Doll.doll()
+# d.set()
 sensor = mpu6050(0x68)
 
 RESTRICT_PITCH = 1
@@ -104,10 +104,10 @@ while(1):
     print("compAngleY   %f"%compAngleY)
     print("kalAngleY    %f"%kalAngleY)
     print("")
-    if (micros()-t) > 20*10**(-3):
-        t=micros()
-        if abs(roll)<30:
-            d.l_ear.angle = roll
-        if abs(pitch)<30:
-            d.r_ear.angle = pitch
-        d.set()
+    # if (micros()-t) > 20*10**(-3):
+    #     t=micros()
+    #     if abs(roll)<30:
+    #         d.l_ear.angle = roll
+    #     if abs(pitch)<30:
+    #         d.r_ear.angle = pitch
+    #     d.set()
