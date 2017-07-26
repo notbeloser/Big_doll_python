@@ -3,9 +3,9 @@ import math
 from mpu6050 import mpu6050
 from time import sleep,time
 import os
-from Doll import doll
+import Doll
 
-d = doll()
+d = Doll.doll()
 d.set()
 sensor = mpu6050(0x68)
 
