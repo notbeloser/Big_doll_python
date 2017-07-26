@@ -56,7 +56,7 @@ def doll_set_by_big_console(d_num):
     d.set()
 
 
-while True:
+while 1:
     print("waiting the data come")
     data, addr = s.recvfrom(2048)
     if not data:

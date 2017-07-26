@@ -3,6 +3,10 @@ import math
 from mpu6050 import mpu6050
 from time import sleep,time
 import os
+from Doll import doll
+
+d = doll()
+d.set()
 sensor = mpu6050(0x68)
 
 RESTRICT_PITCH = 1
@@ -99,5 +103,6 @@ while(1):
     print("compAngleY   %f"%compAngleY)
     print("kalAngleY    %f"%kalAngleY)
     print("")
-
+    # d.l_ear.angle = (d_num[l_ear_angle] - 512) / 1024 * 68 - 5
+    # d.r_ear.angle = (d_num[r_ear_angle] - 512) / 1024 * 68 - 24
 
