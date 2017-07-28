@@ -104,10 +104,10 @@ while(1):
     print("compAngleY   %f"%compAngleY)
     print("kalAngleY    %f"%kalAngleY)
     print("")
-    if (micros()*1000-t) > 20:
-        t=micros()*1000
-        if abs(roll)<30:
-            d.l_ear.angle = roll
-        if abs(pitch)<30:
-            d.r_ear.angle = pitch
-        d.set()
+    # if (micros()*1000-t) > 20:
+    #     t=micros()*1000
+    if abs(roll)<50:
+        d.l_ear.angle = roll
+    if abs(pitch)<50:
+        d.r_ear.angle = pitch
+    d.set()
