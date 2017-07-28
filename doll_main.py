@@ -3,7 +3,7 @@ import socket
 import math
 d = Doll.doll()
 d.set()
-address = ('192.168.31.56',6000)
+address = ('',6000)
 s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 s.bind(address)
 
