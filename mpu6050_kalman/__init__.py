@@ -32,7 +32,7 @@ class mpu6050_kalman(threading.Thread):
         self.timer = self.micros()
         self.t = self.micros()
     def run(self):
-        while(1):
+        while 1:
             self.acc = self.sensor.get_accel_data()
             self.gyro = self.sensor.get_gyro_data()
             self.temp = self.sensor.get_temp()
@@ -66,3 +66,9 @@ class mpu6050_kalman(threading.Thread):
                 self.gyroXangle = self.kalAngleX
             if self.gyroYangle < -180 or self.gyroYangle > 180:
                 self.gyroYangle = self.kalAngleY
+
+            if self.stop_flag:
+                self.stop_flag = 0
+                break
+    def stop(self):
+        self.stop_flag = 1

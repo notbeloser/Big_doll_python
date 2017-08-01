@@ -46,9 +46,9 @@ class ear:
         self.rev=rev
     def set(self):
         if self.rev:
-            duty =  (1650-self.angle * 50 / 3) * 0.4096
+            duty =(1650-self.angle * 50 / 3) * 0.4096
         else:
-            duty =  (1350+self.angle * 50 / 3) * 0.4096
+            duty =(1350+self.angle * 50 / 3) * 0.4096
         
         pwm.set_pwm(self.channel,0,int(duty))
 

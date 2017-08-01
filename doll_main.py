@@ -2,7 +2,8 @@ import Doll
 import socket
 import math
 import mpu6050_kalman
-mpu6050 = mpu6050_kalman.mpu6050_kalman()
+mpu6050 = mpu6050_kalman()
+mpu6050.start()
 d = Doll.doll()
 d.set()
 address = ('',6000)
