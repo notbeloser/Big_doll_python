@@ -1,6 +1,8 @@
 import Doll
 import socket
 import math
+import mpu6050_kalman
+mpu6050 = mpu6050_kalman.mpu6050_kalman()
 d = Doll.doll()
 d.set()
 address = ('',6000)
@@ -24,8 +26,10 @@ def doll_set_by_big_console(d_num):
     r_mouth_angle=12
 
 
-    d.l_ear.angle = (d_num[l_ear_angle]-512)/1024*68 - 5
-    d.r_ear.angle = (d_num[r_ear_angle]-512)/1024*68 - 24
+    # d.l_ear.angle = (d_num[l_ear_angle]-512)/1024*68 - 5
+    # d.r_ear.angle = (d_num[r_ear_angle]-512)/1024*68 - 24
+    d.l_ear.angle = mpu6050.roll
+    d.r_ear.angle = mpu6050.pitch
 
     d.l_bow.y=(d_num[l_bow_y]-512)/512*11-10
     d.r_bow.y=(d_num[r_bow_y]-512)/512*11-9

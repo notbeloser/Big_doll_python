@@ -1,16 +1,11 @@
 from Kalman_py import Kalman_py
 import math
-import Doll
 from mpu6050 import mpu6050
 from time import sleep,time
-import os
 
 
-d = Doll.doll()
-d.set()
+
 sensor = mpu6050(0x68)
-
-RESTRICT_PITCH = 1
 kalmanX = Kalman_py()
 kalmanY = Kalman_py()
 
@@ -24,12 +19,8 @@ kalAngleY = 0.0
 
 
 
-if RESTRICT_PITCH == 1:
-    roll = math.degrees(math.atan2(acc['y'], acc['z']))
-    pitch = math.degrees(math.atan(-acc['x'] / math.sqrt(acc['y']**2 + acc['z']**2)))
-else:
-    roll=math.atan(acc['y']/math.sqrt(acc['x']**2 + acc['z']**2))
-    pitch=math.atan2(-acc['x'],acc['z'])
+roll = math.degrees(math.atan2(acc['y'], acc['z']))
+pitch = math.degrees(math.atan(-acc['x'] / math.sqrt(acc['y']**2 + acc['z']**2)))
 
 kalmanX.setAngle(roll)
 kalmanY.setAngle(pitch)
@@ -46,41 +37,26 @@ while(1):
     temp = sensor.get_temp()
     dt = micros() - timer
     timer = micros()
-    if RESTRICT_PITCH == 1:
-        roll = math.degrees(math.atan2(acc['y'], acc['z']))
-        pitch = math.degrees(math.atan(-acc['x'] / math.sqrt(acc['y'] ** 2 + acc['z'] ** 2)))
-    else:
-        roll = math.atan(acc['y'] / math.sqrt(acc['x'] ** 2 + acc['z'] ** 2))
-        pitch = math.atan2(-acc['x'], acc['z'])
+    roll = math.degrees(math.atan2(acc['y'], acc['z']))
+    pitch = math.degrees(math.atan(-acc['x'] / math.sqrt(acc['y'] ** 2 + acc['z'] ** 2)))
+
 
     gyroXrate = gyro['x'] / 131
     gyroYrate = gyro['y'] / 131
 
-    if RESTRICT_PITCH == 1:
-        if (roll < -90 and kalAngleX > 90) or (roll > 90 and kalAngleX < -90):
-            kalmanX.setAngle(roll)
-            compAngleX = roll
-            kalAngleX = roll
-            gyroXangle = roll
-        else:
-            kalAngleX = kalmanX.getAngle(roll, gyroXrate, dt)
 
-        if abs(kalAngleX)>90:
-            gyroYrate = -gyroYrate
-
-        kalAngleY = kalmanY.getAngle(pitch, gyroYrate, dt)
+    if (roll < -90 and kalAngleX > 90) or (roll > 90 and kalAngleX < -90):
+        kalmanX.setAngle(roll)
+        compAngleX = roll
+        kalAngleX = roll
+        gyroXangle = roll
     else:
-        if (pitch < -90 and kalAngleY > 90) or (pitch > 90 and kalAngleY < -90):
-            kalmanY.setAngle(pitch)
-            compAngleY = pitch
-            kalAngleY = pitch
-            gyroYangle = pitch
-        else:
-            kalAngleY = kalmanY.getAngle(pitch, gyroYrate, dt)
-
-        if abs(kalAngleY) > 90:
-            gyroXrate = -gyroXrate
         kalAngleX = kalmanX.getAngle(roll, gyroXrate, dt)
+
+    if abs(kalAngleX)>90:
+        gyroYrate = -gyroYrate
+
+    kalAngleY = kalmanY.getAngle(pitch, gyroYrate, dt)
 
     gyroXangle += gyroXrate * dt
     gyroYangle += gyroYrate * dt
@@ -92,22 +68,3 @@ while(1):
     if gyroYangle < -180 or gyroYangle > 180 :
         gyroYangle = kalAngleY
 
-    os.system("clear")
-
-    print("roll         %f"%roll)
-    print("gyroXangle   %f"%gyroXangle)
-    print("compAngleX   %f"%compAngleX)
-    print("kalAngleX    %f"%kalAngleX)
-
-    print("pitch        %f"%pitch)
-    print("gyroYangle   %f"%gyroYangle)
-    print("compAngleY   %f"%compAngleY)
-    print("kalAngleY    %f"%kalAngleY)
-    print("")
-    # if (micros()*1000-t) > 20:
-    #     t=micros()*1000
-    if abs(roll)<50:
-        d.l_ear.angle = roll
-    if abs(pitch)<50:
-        d.r_ear.angle = pitch
-    d.set()
